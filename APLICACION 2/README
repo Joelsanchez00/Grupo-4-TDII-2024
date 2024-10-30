@@ -1,0 +1,26 @@
+1. Tome como base una aplicaci´on desarrollada en la actividad de formaci´on pr´actica 1 y cree
+un driver para la utilizaci´on del m´odulo GPIO. Para hacer esto, siga los pasos detallados
+en la Gu´ıa de creaci´on de drivers que est´a en un archivo en formato pdf, en el Ejemplo04,
+que se encuentra en el repositorio Tecnicas Digitales II, de aplicaciones de la materia.
+2. Una vez creado el driver, haga las modificaciones necesarias en main.c para reemplazar
+las funciones de la HAL para el m´odulo GPIO, utilizadas originalmente, por las funciones
+creadas en el driver.
+3. Compile, y realice el degub y la programaci´on de la placa de desarrollo para verificar que
+la aplicaci´on corre y ejecuta las operaciones correctamente como lo hac´ıa originalmente
+antes de la modificaci´on.
+4. Replique las modificaciones a todas las aplicaciones desarrolladas en la actividad de
+formaci´on te´orica 1.
+5. Desarrolle un breve informe que contenga los siguientes Items:
+5.1. Introducci´on al tema: utilizaci´on de drivers en Apps desarrolladas para sistemas
+embebidos. En este ´ıtem explique las ventajas de desarrollar Apps utilizando drivers
+y c´omo se realiza la creaci´on y el desarrollo de un driver: pasos generales y detalles
+a tener en cuenta para evitar errores.
+5.2. Aplicaciones desarrolladas:
+Aplicaci´on: Nombre de la aplicaci´on modificada.
+Autor de la modificaci´on: Apellido y nombres del alumno que realiz´o las
+modificaciones en cada aplicaci´on.
+Observaciones: sobre lo realizado en esa aplicaci´on. En este campo puede
+compartir su experiencia en el desarrollo, los problemas que pudo haber
+enfrentado y como los solucion´o. Recomendaciones si las hubiera.
+5.3. Link al repositorio grupal: en el que se encuentran las aplicaciones desarrolladas
+para esta actividad de formaci´on pr´actica.
