@@ -1,0 +1,9 @@
+../Drivers/API/Src/API_GPIO.c:27:6:MX_GPIO_Init	56	static
+../Drivers/API/Src/API_GPIO.c:82:6:writeLedOn_GPIO	16	static
+../Drivers/API/Src/API_GPIO.c:92:6:writeLedOff_GPIO	16	static
+../Drivers/API/Src/API_GPIO.c:102:6:toggleLed_GPIO	16	static
+../Drivers/API/Src/API_GPIO.c:112:16:readButton_GPIO	8	static
+../Drivers/API/Src/API_GPIO.c:122:6:delayInit	16	static
+../Drivers/API/Src/API_GPIO.c:127:8:delayRead	16	static
+../Drivers/API/Src/API_GPIO.c:141:6:delayWrite	16	static
+../Drivers/API/Src/API_GPIO.c:164:6:BOTONCTR	16	static
