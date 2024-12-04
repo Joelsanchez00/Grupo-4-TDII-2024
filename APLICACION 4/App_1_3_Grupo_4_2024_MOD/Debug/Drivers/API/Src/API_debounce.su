@@ -1,0 +1,4 @@
+../Drivers/API/Src/API_debounce.c:26:6:debounceInit	40	static
+../Drivers/API/Src/API_debounce.c:43:6:debounceUpdate	16	static
+../Drivers/API/Src/API_debounce.c:65:6:readKey	16	static
+../Drivers/API/Src/API_debounce.c:74:17:getButtonState	4	static
