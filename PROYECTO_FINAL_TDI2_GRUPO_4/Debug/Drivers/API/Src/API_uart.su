@@ -1,0 +1,4 @@
+../Drivers/API/Src/API_uart.c:24:6:uartInit	48	static
+../Drivers/API/Src/API_uart.c:38:6:uartSendString	16	static
+../Drivers/API/Src/API_uart.c:42:6:uartSendStringSize	16	static
+../Drivers/API/Src/API_uart.c:46:6:uartReceiveStringSize	24	static
