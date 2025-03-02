@@ -1,0 +1,79 @@
+# Generador de Formas de Onda Controlado por Bluetooth y Botón
+
+Este proyecto implementa un generador de formas de onda que puede generar ondas senoidales, de sierra, cuadradas y triangulares. La selección de la forma de onda se realiza mediante un botón y comandos Bluetooth. La frecuencia y la amplitud de las ondas se pueden ajustar mediante comandos Bluetooth. La información se muestra en una pantalla LCD y se envía a través de UART3 para depuración.
+
+## Características
+
+-   Generación de ondas senoidales, de sierra, cuadradas y triangulares.
+-   Control de selección de forma de onda mediante botón y comandos Bluetooth.
+-   Ajuste de frecuencia y amplitud mediante comandos Bluetooth.
+-   Visualización de información en pantalla LCD.
+-   Comunicación UART3 para depuración.
+-   Comunicación UART4 para comandos Bluetooth.
+-   Uso de DMA para la salida DAC.
+
+## Hardware Requerido
+
+-   Placa de desarrollo STM32 (específicamente, se utilizan periféricos como ADC1, DAC, ETH, I2C1, TIM2, UART3, UART4, USB OTG FS).
+-   Módulo Bluetooth conectado a UART4.
+-   Pantalla LCD I2C conectada a I2C1.
+-   Botón conectado a GPIO PC13.
+
+## Software Requerido
+
+-   Entorno de desarrollo STM32CubeIDE.
+-   Librería HAL de STM32.
+-   Librería para la pantalla LCD I2C.
+
+## Estructura del Proyecto
+
+-   `main.c`: Archivo principal del programa.
+-   `API_debounce.h`/`.c`: Implementación de la función de debounce para el botón.
+-   `LCDI2C.h`/`.c`: Librería para la pantalla LCD I2C.
+
+## Configuración
+
+1.  **Configuración del Hardware:**
+    -   Conectar el módulo Bluetooth a UART4.
+    -   Conectar la pantalla LCD I2C a I2C1.
+    -   Conectar el botón a GPIO PC13.
+2.  **Configuración del Software:**
+    -   Importar el proyecto en STM32CubeIDE.
+    -   Asegurarse de que las librerías HAL y la librería LCD I2C estén incluidas.
+    -   Configurar los periféricos ADC1, DAC, ETH, I2C1, TIM2, UART3, UART4 y USB OTG FS según las necesidades del proyecto.
+    -   Configurar la interrupción UART4 para recibir comandos Bluetooth.
+    -   Configurar el timer TIM2 para generar la frecuencia de la señal de salida.
+    -   Configurar el DMA para la salida DAC.
+
+## Uso
+
+1.  **Selección de Forma de Onda:**
+    -   Presionar el botón conectado a PC13 para cambiar la forma de onda (seno, sierra, cuadrada, triangular).
+    -   Enviar los comandos Bluetooth "SEN", "SIE", "CUA" o "TRI" a través de UART4 para seleccionar la forma de onda.
+2.  **Ajuste de Frecuencia:**
+    -   Enviar el comando Bluetooth "FREQ=X.Y" (donde X.Y es la frecuencia deseada en Hz) a través de UART4.
+3.  **Ajuste de Amplitud:**
+    -   Enviar el comando Bluetooth "AMP=Z.W" (donde Z.W es la amplitud deseada) a través de UART4.
+4.  **Visualización en LCD:**
+    -   La pantalla LCD muestra la forma de onda seleccionada y la frecuencia actual.
+5.  **Depuración:**
+    -   La información de depuración (valores de onda, comandos recibidos) se envía a través de UART3.
+
+## Funciones Clave
+
+-   `actualizarFrecuencia()`: Actualiza la frecuencia del timer TIM2 y muestra la frecuencia en la LCD.
+-   `recalcularOndas()`: Recalcula los valores de las ondas senoidal, de sierra, cuadrada y triangular.
+-   `ondaseno()`, `ondasierra()`, `ondacuadrada()`, `ondatriangular()`: Generan los valores de las diferentes formas de onda.
+-   `processBluetoothCommand()`: Procesa los comandos recibidos a través de Bluetooth.
+-   `HAL_UART_RxCpltCallback()`: Función de callback para la recepción de datos UART4.
+-   `enviar(uint32_t valor)`: Envia datos por UART3 para depuración.
+
+## Comandos Bluetooth
+
+-   `SEN`: Selecciona la onda senoidal.
+-   `SIE`: Selecciona la onda de sierra.
+-   `CUA`: Selecciona la onda cuadrada.
+-   `TRI`: Selecciona la onda triangular.
+-   `FREQ=X.Y`: Ajusta la frecuencia a X.Y Hz.
+-   `AMP=Z.W`: Ajusta la amplitud a Z.W.
+
